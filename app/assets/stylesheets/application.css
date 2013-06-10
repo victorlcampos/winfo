@@ -1,0 +1,32 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require 'bootstrap-classic'
+ *= require 'bootstrap-responsive.min'
+ *= require 'charisma-app'
+ *= require 'jquery-ui-1.8.21.custom'
+ *= require 'fullcalendar.css'
+ *= require 'fullcalendar.print.css'
+ *= require 'chosen'
+ *= require 'uniform.default'
+ *= require 'charisma-app'
+ *= require 'colorbox'
+ *= require 'charisma-app'
+ *= require 'jquery.cleditor'
+ *= require 'jquery.noty'
+ *= require 'noty_theme_default'
+ *= require 'elfinder.min'
+ *= require 'elfinder.theme'
+ *= require 'jquery.iphone.toggle'
+ *= require 'opa-icons'
+ *= require 'uploadify.css'
+ *= require_self
+ *= require_tree .
+ */

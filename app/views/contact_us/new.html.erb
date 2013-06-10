@@ -1,0 +1,18 @@
+<div id="content" class='span12'>
+  <div class="row-fluid">
+    <%= cbox(6, 'Formulário de contato') do %>
+      <% @contact_us.errors.each do |field, msg|  %>
+        <%= calert_error(field, msg) %>
+      <% end %>
+      <%= form_for @contact_us, url: contact_us_path, html: { class: 'form-horizontal' } do |f| %>
+        <fieldset>
+          <%= ctext_field(f, :name) %>
+          <%= ctext_field(f, :title) %>
+          <%= ctext_field(f, :email) %>
+          <%= ctext_area(f,  :content) %>
+          <%= cform_actions f %>
+        </fieldset>
+      <% end %>
+    </div><!--/row-->
+  <% end %>
+</div>

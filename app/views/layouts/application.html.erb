@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Winfo</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'layouts/navbar' %>
+  <div class='container-fluid'>
+    <%= yield %>
+  </div>
+
+	<footer>
+		<p class="pull-left">
+      &copy; <a href="http://usman.it" target="_blank">Victor Campos</a> 2013
+    </p>
+    <p class="pull-left">
+      <%= link_to "Fale Conosco", new_contact_u_path %>
+    </p>
+
+
+		<p class="pull-right">
+      Powered by: <a href="http://usman.it/free-responsive-admin-template">Charisma</a>
+    </p>
+	</footer>
+</body>
+
+<%= javascript_include_tag "application" %>
+</html>

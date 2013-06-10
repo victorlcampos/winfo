@@ -1,0 +1,18 @@
+== Initial Project
+É um esqueleto de projeto Rails.
+
+== Ambiente Instalado
+Rvm:
+1.  Ruby 2.0.0
+2.  Rails 3.2.13
+
+Database:
+1. Postgresql
+
+Outros:
+1. PhantonJS
+2. LiveReload
+
+== Como rodar o servidor
+  vagrant up
+  bundle exec guard -p
