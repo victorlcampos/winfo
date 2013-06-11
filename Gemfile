@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 # USER SESSION
-gem 'devise'
 
 # UTILITIES
 gem "rails_config"

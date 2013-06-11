@@ -7,11 +7,12 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu201210"
+  config.vm.box = "winfome"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = 'https://copy.com/eqguhxXQH6Hq/postgresql_server.box'
+
+  config.vm.box_url = 'https://copy.com/CyudSEChRLlVsi0e/redis_server.box'
   config.vm.forward_port 3000, 3000     # rails
   config.vm.forward_port 5432, 5432     # postgresql
   config.vm.forward_port 35729, 35729   # LiveReload

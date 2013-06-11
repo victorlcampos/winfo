@@ -1,0 +1,81 @@
+
+body {
+  margin: 0 auto;
+  line-height: 1.7em;
+  .primary-button {
+    background: #02a6eb;
+    color: #fff;
+  }
+}
+
+.l-box {
+  padding: 1em;
+}
+
+.header {
+  margin: 0 0;
+  .pure-menu {
+    padding: 0.5em;
+    li a:hover {
+      background: none;
+      border: none;
+      color: #aaa;
+    }
+  }
+}
+
+.splash {
+  margin: 2em auto 0;
+  padding: 3em 0.5em;
+  background: #eee;
+  .splash-head {
+    font-size: 300%;
+    margin: 0em 0;
+    line-height: 1.2em;
+    font-family: 'Patua One', Georgia, Cambria, serif;
+    color: #fff;
+  }
+  .splash-subhead {
+    color: #999;
+    font-weight: 300;
+    line-height: 1.4em;
+  }
+  .primary-button {
+    font-size: 150%;
+  }
+}
+
+.content {
+  .content-subhead {
+    color: #999;
+    padding-bottom: 0.3em;
+    text-transform: uppercase;
+    margin: 0;
+    border-bottom: 2px solid #eee;
+    display: inline-block;
+  }
+
+  .content-ribbon {
+    margin: 3em;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.ribbon {
+  background: #eee;
+  text-align: center;
+  padding: 2em;
+  color: #999;
+  h2 {
+    display: inline;
+    font-weight: normal;
+  }
+}
+
+.footer {
+  background: #111;
+  color: #666;
+  text-align: center;
+  padding: 1em;
+  font-size: 80%;
+}

@@ -1,14 +1,15 @@
 require 'spec_helper'
 
 describe 'home/index.html.erb' do
-  context 'create form' do
-    it 'should render sign up form' do
-      render
-      assert_select 'form' do
-        assert_select 'input[name="user[name]"]'
-        assert_select 'input[name="user[email]"]'
-        assert_select 'input[name="user[password]"]'
-        assert_select 'input[name="user[password_confirmation]"]'
+  context 'article' do
+    before(:each) do
+      @articles = [FactoryGirl.create(:article), FactoryGirl.create(:article)]
+    end
+    it 'should render article title' do
+      assert_select 'article' do
+        assert_select 'h1' do
+          assert_select 'a', text: ''
+        end
       end
     end
   end
