@@ -4,9 +4,9 @@ describe Article do
   context 'general methods' do
     describe '#summary_body' do
       context 'with body' do
-        subject { FactoryGirl.create(:article, body: 'a'*5000) }
+        subject { FactoryGirl.create(:article, body: 'a' * 5000) }
         it 'should cut body in 500 and add ...' do
-          subject.summary_body.should == 'a'*500+'...'
+          subject.summary_body.should == 'a' * 500 + '...'
         end
       end
 

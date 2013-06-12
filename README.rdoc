@@ -1,18 +1,20 @@
-== Initial Project
-É um esqueleto de projeto Rails.
+== Winfome
+  Portal colaborativo de reviews, tutoriais e notícias.
 
 == Ambiente Instalado
 Rvm:
-1.  Ruby 2.0.0
-2.  Rails 3.2.13
+  1.  Ruby 2.0.0
+  2.  Rails 3.2.13
 
 Database:
-1. Postgresql
+  1. Postgresql
+  2. Redis v2.6.13
 
 Outros:
-1. PhantonJS
-2. LiveReload
+  1. PhantonJS
+  2. LiveReload
 
 == Como rodar o servidor
   vagrant up
-  bundle exec guard -p
+  vagrant ssh
+  cd /vagrant/ ; sudo service postgresql start ; bundle exec guard -p
