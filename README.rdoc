@@ -18,3 +18,10 @@ Outros:
   vagrant up
   vagrant ssh
   cd /vagrant/ ; sudo service postgresql start ; bundle exec guard -p
+
+== Iniciar banco
+  vagrant ssh
+  cd /vagrant/
+  rake db:migrate
+  rake db:test:clone
+  rake db:seed
