@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :title, :body
+  attr_accessible :title, :body, :name, :email
 
   def summary_body
     my_body = body

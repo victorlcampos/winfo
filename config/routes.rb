@@ -1,8 +1,9 @@
 InitialProject::Application.routes.draw do
+
+  root to: 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  root to: 'home#index'
   resources :contact_us, only: [:new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
