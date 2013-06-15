@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-# USER SESSION
+# ADMIN
+gem 'activeadmin'
 
 # UTILITIES
 gem "rails_config"
