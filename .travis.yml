@@ -4,6 +4,7 @@ rvm:
 env:
   - DB=postgresql
 before_script:
+  - psql -c "CREATE USER initialProject WITH PASSWORD '123456';" -U postgres
   - rake db:create
   - rake db:migrate
   - rake db:test:prepare
