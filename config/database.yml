@@ -12,6 +12,15 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+
+
+postgresql: &postgresql
+  adapter: postgresql
+  username: postgres
+  password:
+  database: initialProject_<%= Rails.env %>
+  min_messages: ERROR
+
 development:
   adapter: postgresql
   encoding: unicode
