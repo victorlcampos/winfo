@@ -24,7 +24,7 @@ postgresql: &postgresql
 defaults: &defaults
   adapter: postgresql
   encoding: unicode
-  database: initialProject_development
+  database: initialProject_<%= Rails.env %>
   pool: 5
   username: initialProject
   password: 123456
