@@ -26,5 +26,14 @@ describe Article do
       end
     end
 
+  describe '#posted_entry' do
+      context 'correct date' do
+        subject { FactoryGirl.create(:article, created_at: Date.new(2013,06,15)) }
+        it 'should write 15 Jun 2013' do
+          subject.posted_entry.should == subject.created_at.day.to_s + " Jun " + subject.created_at.year.to_s
+        end
+      end
+    end
+
   end
 end

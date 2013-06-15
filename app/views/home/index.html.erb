@@ -2,7 +2,7 @@
   <article class="pure-g-r post-cover-1">
     <div class="pure-u-2-3">
       <div class="l-box splash-text">
-        <h1 class="splash-head"><a href=""><%= article.title %></a></h1>
+        <h1 class="splash-head"><a href="<%= article_url(article) %>"><%= article.title %></a></h1>
         <time class="splash-date"><%=  article.posted_at %></time>
         <h2 class="splash-subhead"><%= article.summary_body %></h2>
       </div>
