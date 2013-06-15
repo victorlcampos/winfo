@@ -1,4 +1,6 @@
 InitialProject::Application.routes.draw do
+  match "articles/:id" => "articles#show"
+
   root to: 'home#index'
   resources :contact_us, only: [:new, :create]
   # The priority is based upon order of creation:
