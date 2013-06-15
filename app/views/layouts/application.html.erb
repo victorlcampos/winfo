@@ -14,9 +14,18 @@
   <body>
     <div class="content pure-g-r">
       <div class="header pure-u-1">
-        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-          <a class="pure-menu-heading" href="/">Winfo</a>
-        </div>
+         <div class="header pure-u-1">
+            <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+               <%= link_to "Winfo", root_url, class: "pure-menu-heading" %>
+                           
+               <ul>
+                  <li><%= link_to "Últimos Artigos", root_url  %></li>
+                  <li><%= link_to "Mais Lidos", root_url(order_by: "most_read")  %></li>
+                  <li><%= link_to "Contato", root_url %></li>
+                  <li><%= link_to "Sobre", root_url %></li>
+               </ul>
+            </div>
+         </div>
       </div>
     </div>
     <div class="splash pure-u-1">

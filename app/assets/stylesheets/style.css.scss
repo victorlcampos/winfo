@@ -41,7 +41,7 @@ body .primary-button {
         margin: 0em 0;
         line-height: 1.2em;
         font-family: 'Patua One', Georgia, Cambria, serif;
-        color: rgb(206, 206, 206);
+        color: rgb(255, 255, 255);
     }
     .splash .splash-subhead {
         color: rgb(206,206,206);
@@ -131,4 +131,8 @@ color: rgb(180, 180, 180);
 .entry-date{
   color: rgb(255,255,255);
   font-family: 'Patua One', Georgia, Cambria, serif;
+}
+
+.entry-share{
+  margin: 20px 0;
 }
