@@ -13,21 +13,13 @@
 # gem 'pg'
 #
 
-
-postgresql: &postgresql
-  adapter: postgresql
-  username: postgres
-  password:
-  database: initialProject_<%= Rails.env %>
-  min_messages: ERROR
-
 defaults: &defaults
   adapter: postgresql
   encoding: unicode
   database: initialProject_<%= Rails.env %>
   pool: 5
-  username: initialProject
-  password: 123456
+  username: postgres
+  password:
 
 development:
   <<: *defaults
