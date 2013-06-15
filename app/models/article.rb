@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-  attr_accessible :title, :body
+  validates :title, :body, :name, :email, presence: true
+
+  attr_accessible :title, :body, :name, :email
 
   def summary_body
     my_body = body
