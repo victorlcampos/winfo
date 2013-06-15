@@ -47,23 +47,5 @@ describe 'home/index.html.erb' do
         end
       end
     end
-
-    it 'should render articles name' do
-      render
-      assert_select 'article' do
-        @articles.each do |article|
-          assert_select 'span', text: article.name
-        end
-      end
-    end
-
-    it 'should render article emails' do
-      render
-      assert_select 'article' do
-        @articles.each do |article|
-          assert_select 'span', text: article.email
-        end
-      end
-    end
   end
 end
