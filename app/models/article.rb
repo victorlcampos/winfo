@@ -10,4 +10,8 @@ class Article < ActiveRecord::Base
    	created_at.strftime("Postado em %d %b %Y")
   end
 
+  def posted_entry
+   	created_at.strftime("%d %b %Y")
+  end
+
 end

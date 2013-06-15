@@ -6,8 +6,8 @@ describe ArticlesController do
     let!(:article) { {} }
 
     before(:each) do
-      Article.stub(:new) {article} 
-      get :show
+      Article.stub(:find).with("1") {article} 
+      get :show, id: 1
     end
 
     it "returns http success" do
@@ -15,7 +15,7 @@ describe ArticlesController do
     end
 
     it "should assign the article" do
-      assigns(:articles).should == article
+      assigns(:article).should == article
     end
   end
 

@@ -1,5 +1,5 @@
 InitialProject::Application.routes.draw do
-  match "articles/:id" => "articles#show"
+  resources :articles, only: [:show]
 
   root to: 'home#index'
   resources :contact_us, only: [:new, :create]
