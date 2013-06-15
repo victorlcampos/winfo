@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   def new
     @article = Article.new
   end
@@ -12,8 +11,10 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
-
+  
   def show
-    @article = Article.find(params[:id])
+  	@article = Article.find(params[:id])
+    @article.views = @article.views + 1
+    @article.save
   end
 end
