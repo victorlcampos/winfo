@@ -1,12 +1,18 @@
 <header class="pure-g-r post-cover-1">
     <div>
-      <%= form_tag(article_likes_path(@article), id: 'like_form', method: 'post' ) do %>
-        <%= link_to "like", 'javascript:document.getElementById("like_form").submit();' %>
-      <% end %>
+
     </div>
     <div class="pure-u-2-3">
       <div class="l-box splash-text">
-        <h1 class="splash-head entry-title"><%= @article.title %></h1>
+        <h1 class="splash-head entry-title">
+          <%= @article.title %>
+          <%= form_tag(article_likes_path(@article), id: 'like_form', method: 'post' ) do %>
+            <%= link_to image_tag('like.png'), 'javascript:document.getElementById("like_form").submit();' %>
+            <span>
+              <%= @article.likes %>
+            </span>
+          <% end %>
+        </h1>
         <time class="entry-date"><%=  @article.posted_entry %></time>
       </div>
     </div>
