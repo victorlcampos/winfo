@@ -1,3 +1,4 @@
+{<img src="https://travis-ci.org/winfojenkins/winfo.png" />}[https://travis-ci.org/winfojenkins/winfo]
 == Winfome
   Portal colaborativo de reviews, tutoriais e notícias.
 
