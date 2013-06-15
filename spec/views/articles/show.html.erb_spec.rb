@@ -27,5 +27,12 @@ describe "articles/show.html.erb" do
       end
     end
 
+    it 'should render like button' do
+      render
+      assert_select 'form[action=?]#like_form', article_likes_path(@article.id) do
+        assert_select 'a[href=?]', 'javascript:document.getElementById("like_form").submit();'
+      end
+    end
+
   end
 end

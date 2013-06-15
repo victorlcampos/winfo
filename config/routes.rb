@@ -1,6 +1,8 @@
 InitialProject::Application.routes.draw do
 
-  resources :articles, only: [:new, :create, :show]
+  resources :articles, only: [:new, :create, :show] do
+   resources :likes, only: [:create]
+  end
 
   root to: 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
