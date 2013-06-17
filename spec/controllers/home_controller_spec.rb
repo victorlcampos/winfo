@@ -14,7 +14,7 @@ describe HomeController do
     end
 
     it 'should assings all articles' do
-      assigns(:articles).should == [article_1, article_2]
+      assigns(:articles).should == [article_2, article_1]
     end
   end
 end

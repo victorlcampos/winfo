@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20130615173243) do
     t.datetime "updated_at",                :null => false
     t.string   "name"
     t.string   "email"
-    t.integer  "likes",      :default => 0
     t.integer  "views",      :default => 0
+    t.integer  "likes",      :default => 0
   end
 
   create_table "users", :force => true do |t|

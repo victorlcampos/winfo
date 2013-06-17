@@ -70,10 +70,10 @@ describe ArticlesController do
   end
 
   describe "GET 'show'" do
-    let!(:article) { {} }
+    let!(:article) { FactoryGirl.build(:article) }
 
     before(:each) do
-      Article.stub(:find).with("1") {article}
+      Article.stub(:find).with('1') {article}
       get :show, id: 1
     end
 
