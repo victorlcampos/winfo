@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Article do
+  context 'relationship' do
+    it { should have_many(:likes) }
+  end
+
   context 'validates' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }

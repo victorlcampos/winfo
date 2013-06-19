@@ -12,9 +12,24 @@ describe HomeController do
     it 'should returns http success' do
       response.should be_success
     end
+    context 'newer' do
+      before(:each) do
+        get :index, order_by: nil
+      end
 
-    it 'should assings all articles' do
-      assigns(:articles).should == [article_2, article_1]
+      it 'should assings all articles' do
+        assigns(:articles).should == [article_2, article_1]
+      end
+    end
+    context 'most read' do
+      before(:each) do
+        article_1.views = 10
+        article_1.save!
+        get :index, order_by: "most_read"
+      end
+      it 'should assings all articles' do
+        assigns(:articles).should == [article_1, article_2]
+      end
     end
   end
 end

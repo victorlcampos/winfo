@@ -34,5 +34,10 @@ describe "articles/show.html.erb" do
       end
     end
 
+    it 'should render likes number' do
+      render
+      assert_select 'span', text: @article.likes_count
+    end
+
   end
 end
