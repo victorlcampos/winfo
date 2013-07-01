@@ -112,6 +112,10 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    devise_invitable (1.1.8)
+      actionmailer (~> 3.0)
+      devise (>= 2.1.2)
+      railties (~> 3.0)
     diff-lcs (1.2.4)
     dimensions (1.2.0)
     dimensions-rails (1.0.5)
@@ -382,6 +386,8 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   database_cleaner
+  devise
+  devise_invitable
   dimensions-rails
   factory_girl_rails
   guard-brakeman

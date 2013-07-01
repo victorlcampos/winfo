@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# SECURITY
+gem 'devise'
+gem 'devise_invitable'
+
 # ADMIN
 gem 'activeadmin'
 

@@ -4,17 +4,21 @@ describe ArticlesController do
   describe 'get "new"' do
     let!(:article) { {} }
 
-    before(:each) do
-      Article.stub(:new) {article}
-      get :new
-    end
+    context 'with loged user' do
+      before(:each) do
+        Article.stub(:new) {article}
+        get :new
+      end
 
-    it 'should return http success' do
-      response.should be_success
-    end
+      it 'should return http success' do
+        response.should be_success
+      end
 
-    it 'should assign new article' do
-      assigns(:article).should eq(article)
+      it 'should assign new article' do
+        assigns(:article).should eq(article)
+      end
+    end
+    context 'without loged user' do
     end
   end
 
@@ -23,8 +27,6 @@ describe ArticlesController do
       let!(:valid_params) do
         {
           article: {
-            name: 'Lucas',
-            email: 'lucas@winfo.me',
             title: 'Hello World',
             body: 'Corpooooooooo......'
           }
@@ -47,8 +49,6 @@ describe ArticlesController do
       let!(:invalid_params) do
         {
           article: {
-            name: '',
-            email: '',
             title: '',
             body: ''
           }

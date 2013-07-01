@@ -1,5 +1,7 @@
 InitialProject::Application.routes.draw do
 
+  devise_for :users
+
   resources :articles, only: [:new, :create, :show] do
    resources :likes, only: [:create]
   end
