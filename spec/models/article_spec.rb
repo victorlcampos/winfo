@@ -37,6 +37,15 @@ describe Article do
         end
       end
     end
+  end
 
+  context 'delegated mathods' do
+    let!(:user) { FactoryGirl.create(:user) }
+    subject { FactoryGirl.create(:article, user: user) }
+    describe '#name' do
+      it "should return user.name" do
+        subject.name.should eq(user.name)
+      end
+    end
   end
 end

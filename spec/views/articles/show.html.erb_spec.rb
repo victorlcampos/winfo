@@ -2,8 +2,14 @@ require 'spec_helper'
 
 describe "articles/show.html.erb" do
   context 'article' do
+    let!(:user) { FactoryGirl.create(:user) }
     before(:each) do
-      @article = FactoryGirl.create(:article, title: 'Title 1', body: 'Hello')
+      params = {
+        title: 'Title 1',
+        body: 'Hello',
+        user: user
+      }
+      @article = FactoryGirl.create(:article, params)
     end
 
     it 'should render articles title' do

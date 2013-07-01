@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 describe ArticlesController do
+  let!(:article) { FactoryGirl.build(:article) }
+  let!(:user) { FactoryGirl.create(:user) }
   describe 'get "new"' do
-    let!(:article) { {} }
 
     context 'with loged user' do
       before(:each) do
         Article.stub(:new) {article}
+        sign_in user
         get :new
       end
 
@@ -19,11 +21,18 @@ describe ArticlesController do
       end
     end
     context 'without loged user' do
+      before(:each) do
+        get :new
+      end
+
+      it 'should return http success' do
+        response.should redirect_to(new_user_session_path)
+      end
     end
   end
 
   describe 'post "create"' do
-    context 'valid params' do
+    context 'without logged user' do
       let!(:valid_params) do
         {
           article: {
@@ -33,38 +42,62 @@ describe ArticlesController do
         }
       end
 
-      before(:each) do
+      it 'should return http success' do
         post :create, valid_params
-      end
-
-      it 'should redirect to home' do
-        response.should redirect_to(root_path)
-      end
-
-      it 'should persist article' do
-        assigns(:article).should be_persisted
+        response.should redirect_to(new_user_session_path)
       end
     end
-    context 'invalid params' do
-      let!(:invalid_params) do
-        {
-          article: {
-            title: '',
-            body: ''
-          }
-        }
-      end
-
+    context 'with logged user' do
       before(:each) do
-        post :create, invalid_params
+        sign_in user
       end
 
-      it 'should render to new' do
-        response.should render_template("new")
-      end
+      context 'valid params' do
+        let!(:valid_params) do
+          {
+            article: {
+              title: 'Hello World',
+              body: 'Corpooooooooo......'
+            }
+          }
+        end
 
-      it 'should persist article' do
-        assigns(:article).should_not be_persisted
+        before(:each) do
+          post :create, valid_params
+        end
+
+        it 'should redirect to home' do
+          response.should redirect_to(root_path)
+        end
+
+        it 'should persist article' do
+          assigns(:article).should be_persisted
+        end
+        it 'should have user' do
+          assigns(:article).user.should eq(user)
+        end
+      end
+      context 'invalid params' do
+        let!(:invalid_params) do
+          {
+            article: {
+              title: '',
+              body: ''
+            }
+          }
+        end
+
+        before(:each) do
+          post :create, invalid_params
+        end
+
+        it 'should render to new' do
+          response.should render_template("new")
+        end
+
+        it 'should persist article' do
+          assigns(:article).should_not be_persisted
+        end
       end
     end
   end

@@ -4,6 +4,7 @@ class Article < ActiveRecord::Base
 
   has_many :likes
   belongs_to :user
+  delegate :name, to: :user
 
 
   def summary_body
