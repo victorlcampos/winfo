@@ -14,7 +14,35 @@ describe 'layouts/application.html.erb' do
       assert_select 'a[href=?]', root_path, text: 'Winfo'
     end
 
-    it 'should render footer' do
+    context 'logged in user' do
+      before { view.stub(:user_signed_in?) { true } }
+      before(:each) do
+        render
+      end
+
+      it 'should render new article link' do
+        assert_select 'a[href=?]', new_article_path, text: 'Novo Artigo'
+      end
+
+      it 'should render logout link' do
+        assert_select 'a[href=?]', destroy_user_session_path,
+          text: 'Sair', method: :delete
+      end
+    end
+
+    context 'user logged out' do
+      before(:each) do
+        render
+      end
+
+      it 'should render login link' do
+        assert_select 'a[href=?]', new_user_session_path, text: 'Entrar'
+      end
+    end
+  end
+
+  context 'footer' do
+    it 'should render Copyright' do
       render
       assert_select 'div.footer', text: 'Winfo.me - Copyright 2013'
     end
