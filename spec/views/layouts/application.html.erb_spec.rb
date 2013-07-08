@@ -24,6 +24,10 @@ describe 'layouts/application.html.erb' do
         assert_select 'a[href=?]', new_article_path, text: 'Novo Artigo'
       end
 
+      it 'should render new invitation link' do
+        assert_select 'a[href=?]', new_user_invitation_path, text: 'Enviar Convite'
+      end
+
       it 'should render logout link' do
         assert_select 'a[href=?]', destroy_user_session_path,
           text: 'Sair', method: :delete
