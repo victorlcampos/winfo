@@ -15,7 +15,7 @@ Vagrant::Config.run do |config|
   config.vm.box_url = '/Users/victorcampos/Copy/Vagrant/redis_server.box'
   config.vm.forward_port 3000, 3000     # rails
   config.vm.forward_port 5432, 5432     # postgresql
-  config.vm.forward_port 35729, 35729   # LiveReload
+  # config.vm.forward_port 35729, 35729   # LiveReload
 
 
 
