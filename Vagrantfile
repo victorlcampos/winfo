@@ -12,7 +12,7 @@ Vagrant::Config.run do |config|
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
 
-  config.vm.box_url = '/Users/victorcampos/Copy/Vagrant/redis_server.box'
+  config.vm.box_url = '/Users/viniciusbittencourt/Downloads/redis_server.box'
   config.vm.forward_port 3000, 3000     # rails
   config.vm.forward_port 5432, 5432     # postgresql
   # config.vm.forward_port 35729, 35729   # LiveReload
