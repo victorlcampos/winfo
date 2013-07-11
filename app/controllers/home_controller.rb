@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
-    if params[:order_by] == "most_read"
-      @articles = Article.order("views DESC")
+    if selected_scope = params[:order_by]
+      @articles = Article.send(selected_scope)
     else
       @articles = Article.order("created_at DESC")
     end

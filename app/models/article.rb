@@ -1,4 +1,7 @@
 class Article < ActiveRecord::Base
+  scope :most_read, order("views DESC")
+  scope :most_liked, order("likes_count DESC")
+
   validates :title, :body, presence: true
   attr_accessible :title, :body
 

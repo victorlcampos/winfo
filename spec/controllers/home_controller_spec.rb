@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe HomeController do
   describe 'GET "index"' do
-    let!(:article_1) { FactoryGirl.create(:article) }
-    let!(:article_2) { FactoryGirl.create(:article) }
+    let!(:article_1) { FactoryGirl.create(:article, likes_count: 4, views: 1) }
+    let!(:article_2) { FactoryGirl.create(:article, likes_count: 2) }
 
     before(:each) do
       get :index
@@ -23,10 +23,19 @@ describe HomeController do
     end
     context 'most read' do
       before(:each) do
-        article_1.views = 10
-        article_1.save!
         get :index, order_by: "most_read"
       end
+
+      it 'should assings all articles' do
+        assigns(:articles).should == [article_1, article_2]
+      end
+    end
+
+    context 'most liked' do
+      before(:each) do
+        get :index, order_by: "most_liked"
+      end
+
       it 'should assings all articles' do
         assigns(:articles).should == [article_1, article_2]
       end

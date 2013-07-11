@@ -48,4 +48,22 @@ describe Article do
       end
     end
   end
+
+  context 'scope' do
+    let!(:article1) { FactoryGirl.create(:article, views: 1, likes_count: 3) }
+    let!(:article2) { FactoryGirl.create(:article, views: 2, likes_count: 1) }
+    let!(:article3) { FactoryGirl.create(:article, views: 0, likes_count: 5) }
+
+    describe '.most_read' do
+      it 'should return articles orded by views' do
+        Article.most_read.should eq([article2, article1, article3])
+      end
+    end
+
+    describe '.most_liked' do
+      it 'should return articles orded by views' do
+        Article.most_liked.should eq([article3, article1, article2])
+      end
+    end
+  end
 end
