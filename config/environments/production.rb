@@ -74,6 +74,7 @@ InitialProject::Application.configure do
     authentication: :plain,
     user_name: "winfojenkins@gmail.com",
     password: "jenkins123",
+    authentication: "plain",
     enable_starttls_auto: true
   }
 end
