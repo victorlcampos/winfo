@@ -18,7 +18,7 @@
 </header>
 
 <article class="entry-content">
-<p class='body'><%= @article.body %></p>
+<p class='body'><%= markdown(@article.body) %></p>
 
 <div class="entry-author">Escrito por <%= @article.name %></div>
 <div class="entry-views"><%= @article.views %> visualizações.</div>

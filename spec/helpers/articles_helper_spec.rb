@@ -1,15 +1,10 @@
 require 'spec_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ArticlesHelper. For example:
-#
-# describe ArticlesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       helper.concat_strings("this","that").should == "this that"
-#     end
-#   end
-# end
 describe ArticlesHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'markdown(text)' do
+    it 'should transform markdown to html' do
+      text = '# Title'
+      helper.markdown(text).should match '<h1>Title</h1>'
+    end
+  end
 end

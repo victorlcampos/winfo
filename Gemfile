@@ -9,6 +9,8 @@ gem 'activeadmin'
 
 # UTILITIES
 gem "rails_config"
+gem 'redcarpet'
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
