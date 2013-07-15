@@ -1,9 +1,9 @@
-<%= form_for @article, :html => {:class => "new-article-form"} do |f| %>
+<%= form_for @article, html: { class: 'form' } do |f| %>
   <p>
-    <%= f.text_field :title,:class => 'new-article-field' ,:placeholder => "Título" %>
+    <%= f.text_field :title, class: 'field' , placeholder: "Título" %>
   </p>
   <p>
-    <%= f.text_area :body,:class => 'new-article-field' , :placeholder => "Escreve seu texto aqui..." %>
+    <%= f.text_area :body, class: 'field' , placeholder: "Escreve seu texto aqui..." %>
   </p>
   <%= f.submit "Enviar Artigo" %>
 <% end %>
