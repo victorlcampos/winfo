@@ -1,14 +1,46 @@
 <%= form_for @article, html: { class: 'form' } do |f| %>
   <p>
-    <%= f.text_field :title, class: 'field' , placeholder: "Título" %>
+    <%= f.text_field :title, class: 'field' , placeholder: 'Título' %>
   </p>
   <p>
-    <%= f.text_area :body, class: 'field' , placeholder: "Escreve seu texto aqui..." %>
+    <div id="epiceditor" class='field'></div>
+    <%= f.text_area :body, class: 'epiceditor' , placeholder: 'Escreve seu texto aqui...' %>
   </p>
   <%= f.submit "Enviar Artigo" %>
 <% end %>
-<div id="epiceditor">
-</div><script src="../epiceditor.min.js"></script>
-<script>
-var editor = new EpicEditor().load();
-</script>
+</div>
+
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag "epiceditor.min" %>
+  <script>
+    var opts = {
+      container: 'epiceditor',
+      textarea: 'article_body',
+      basePath: '../assets',
+      clientSideStorage: true,
+      useNativeFullscreen: false,
+      parser: marked,
+      theme: {
+        base: '/themes/base/epiceditor.css',
+        preview: '/themes/preview/preview-dark.css',
+        editor: '/themes/editor/epic-dark.css'
+      },
+      button: {
+        preview: true,
+        fullscreen: true
+      },
+      focusOnLoad: false,
+      shortcut: {
+        modifier: 18,
+        fullscreen: 70,
+        preview: 80
+      },
+      string: {
+        togglePreview: 'Modo de visualização',
+        toggleEdit: 'Modo de edição',
+        toggleFullscreen: 'Tela cheia'
+      }
+    }
+    var editor = new EpicEditor(opts).load();
+  </script>
+<% end %>
