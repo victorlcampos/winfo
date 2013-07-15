@@ -1,11 +1,14 @@
-<%= form_for(@article) do |f| %>
-  <p class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<%= form_for @article, :html => {:class => "new-article-form"} do |f| %>
+  <p>
+    <%= f.text_field :title,:class => 'new-article-field' ,:placeholder => "Título" %>
   </p>
-  <p class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+  <p>
+    <%= f.text_area :body,:class => 'new-article-field' , :placeholder => "Escreve seu texto aqui..." %>
   </p>
-  <%= f.submit %>
+  <%= f.submit "Enviar Artigo" %>
 <% end %>
+<div id="epiceditor">
+</div><script src="../epiceditor.min.js"></script>
+<script>
+var editor = new EpicEditor().load();
+</script>
