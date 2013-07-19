@@ -3,8 +3,8 @@
     <div class="pure-u-2-3">
       <div class="l-box splash-text">
         <h1 class="splash-head"><a href="<%= article_url(article) %>"><%= article.title %></a></h1>
-        <time class="splash-date"><%=  article.posted_at %></time>
-        <h2 class="splash-subhead"><%= markdown(article.summary_body, false) %></h2>
+        <time class="splash-date"><%=  article.posted_at %></time><address class="author">, por <%= article.name %></address>
+        <div class="splash-subhead"><%= markdown(article.summary_body, false) %></div>
       </div>
     </div>
   </article>
