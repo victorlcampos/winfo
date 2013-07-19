@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe 'layouts/application.html.erb' do
+  let!(:user) { FactoryGirl.create(:user) }
+
   context 'head' do
     it 'should render title with Winfo' do
       render
@@ -17,6 +19,7 @@ describe 'layouts/application.html.erb' do
     context 'logged in user' do
       before { view.stub(:user_signed_in?) { true } }
       before(:each) do
+        sign_in user
         render
       end
 
