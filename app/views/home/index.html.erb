@@ -4,7 +4,7 @@
       <div class="l-box splash-text">
         <h1 class="splash-head"><a href="<%= article_url(article) %>"><%= article.title %></a></h1>
         <time class="splash-date"><%=  article.posted_at %></time>
-        <h2 class="splash-subhead"><%= article.summary_body %></h2>
+        <h2 class="splash-subhead"><%= markdown(article.summary_body, false) %></h2>
       </div>
     </div>
   </article>

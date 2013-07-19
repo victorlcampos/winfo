@@ -21,4 +21,18 @@ describe 'articles/new.html.erb' do
       assert_select 'textarea[name=?]', 'article[body]'
     end
   end
+
+  context 'markdown' do
+    it 'should render the WMDs buttons' do
+      assert_select '#wmd-button-bar'
+    end
+
+    it 'should render input textarea' do
+      assert_select 'textarea#wmd-input'
+    end
+
+    it 'should render the preview' do
+      assert_select '#wmd-preview'
+    end
+  end
 end

@@ -3,44 +3,18 @@
     <%= f.text_field :title, class: 'field' , placeholder: 'Título' %>
   </p>
   <p>
-    <div id="epiceditor" class='field'></div>
-    <%= f.text_area :body, class: 'epiceditor' , placeholder: 'Escreve seu texto aqui...' %>
+    <div id="wmd-button-bar" class='field'></div>
+    <%= f.text_area :body, id: 'wmd-input', class: 'field' %>
+    <div id='wmd-preview' class='field'></div>
   </p>
   <%= f.submit "Enviar Artigo" %>
 <% end %>
-</div>
+
+<%= content_for :stylesheet do %>
+  <%= stylesheet_link_tag 'wmd.css', media: "all" %>
+<% end %>
 
 <%= content_for :javascripts do %>
-  <%= javascript_include_tag "epiceditor.min" %>
-  <script>
-    var opts = {
-      container: 'epiceditor',
-      textarea: 'article_body',
-      basePath: '../assets',
-      clientSideStorage: true,
-      useNativeFullscreen: false,
-      parser: marked,
-      theme: {
-        base: '/themes/base/epiceditor.css',
-        preview: '/themes/preview/preview-dark.css',
-        editor: '/themes/editor/epic-dark.css'
-      },
-      button: {
-        preview: true,
-        fullscreen: true
-      },
-      focusOnLoad: false,
-      shortcut: {
-        modifier: 18,
-        fullscreen: 70,
-        preview: 80
-      },
-      string: {
-        togglePreview: 'Modo de visualização',
-        toggleEdit: 'Modo de edição',
-        toggleFullscreen: 'Tela cheia'
-      }
-    }
-    var editor = new EpicEditor(opts).load();
-  </script>
+  <%= javascript_include_tag "showdown.js" %>
+  <%= javascript_include_tag "wmd.js" %>
 <% end %>

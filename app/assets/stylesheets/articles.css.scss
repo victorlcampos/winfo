@@ -9,3 +9,15 @@
 .epiceditor {
   display: none;
 }
+
+#wmd-input.field {
+  background-color: white !important;
+}
+
+#wmd-preview.field {
+  background-color: #EEEEEE;
+  border: 1px solid;
+  padding: 2px 5px 0px 10px;
+  margin-top: 15px;
+  width: 99%;
+}
