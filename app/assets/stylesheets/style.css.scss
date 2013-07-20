@@ -6,7 +6,7 @@ body {
   background: $home-background;
 
   .l-box {
-    padding: 10px;
+    padding: $padding;
   }
   .header {
     max-height: 84px;
@@ -57,7 +57,6 @@ body {
 
   .splash {
     margin: 0em auto 0;
-    padding: $padding;
     background: $background-color;
 
     .splash-head {
@@ -67,8 +66,7 @@ body {
       font-family: $font-family;
       color: $light-font-color;
       position: relative;
-      left: -30px;
-      border-left: 0.5em solid;
+      left: -18px;
       background-color: #153D57;
       padding: $padding;
 
@@ -143,6 +141,7 @@ body {
   }
 
   .entry-content{
+    padding: $padding;
     max-width: $article-max-width;
     margin: 0 auto;
     color:  $dark-font-color;
