@@ -62,13 +62,14 @@ body {
     background: $background-color;
 
     .splash-head {
-      font-size: 200%;
+      font-size: 160%;
       margin: 0;
       line-height: 1.2em;
       font-family: $font-family;
       color: $light-font-color;
       position: relative;
-      left: -10px;
+      left: -30px;
+      border-left: 0.5em solid;
       background-color: #153D57;
       padding: $padding;
 
