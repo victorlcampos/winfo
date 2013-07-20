@@ -5,15 +5,20 @@ body {
 }
 
 .l-box {
-    padding: 1em;
+    padding: 10px;
 }
 
 .header {
     margin: 0 0;
 }
 
+
+
     .header .pure-menu {
         padding: 0.5em;
+        a {
+            color: #153D57;
+        }
         .pure-menu-heading{
           font-family: 'Audiowide', cursive;
           font-size: 30px;
@@ -35,17 +40,19 @@ body .primary-button {
 .splash {
     margin: 0em auto 0;
     padding: 0.5em 0.5em;
-    background: #eee;
+    background: #fff;
 }
     .splash .splash-head {
         font-size: 300%;
         margin: 0em 0;
         line-height: 1.2em;
-        font-family: 'Patua One', Georgia, Cambria, serif;
+        font-family: georgia, "times new roman", times, serif;
         color: rgb(255, 255, 255);
+        position: relative;
+        left: -10px;
     }
     .splash .splash-subhead {
-        color: rgb(206,206,206);
+        color: #222222;
         font-weight: 300;
         line-height: 1.4em;
     }
@@ -55,7 +62,7 @@ body .primary-button {
 
 
 .content .content-subhead {
-    color: rgb(206,206,206);
+    color: #222222;
     padding-bottom: 0.3em;
     text-transform: uppercase;
     margin: 0;
@@ -91,15 +98,19 @@ body .primary-button {
     width: 100% !important;
     }
     .splash-text{
-    background-color: rgba(0, 0, 0, 0.66);
-    text-align: left;
-    min-height: 120px;
-    position: relative;
-
+        background-color: white;
+        text-align: left;
+        min-height: 120px;
+        position: relative;
     }
-    .splash-head a{
-    text-decoration: none;
-    color: #fff;
+    .splash-head {
+        background-color: rgba(0, 0, 0, 0.66);
+        background-color: #153D57;
+        padding: 15px;
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
     }
     .post-cover-1{
 
@@ -110,13 +121,14 @@ body .primary-button {
     /*padding: 50px;*/
      background-size: cover;    background-position: center;    background-repeat: no-repeat;
 margin: 0px 0 10px 0;
+     border-bottom: 1px solid #b7b7b7;
      }
 
     .post-cover-2{
     }
 
 time, address {
- color: rgb(180, 180, 180);
+ color: #222222;
 }
 
 .entry-content{
@@ -129,7 +141,7 @@ time, address {
 
 .entry-date{
   color: rgb(255,255,255);
-  font-family: 'Patua One', Georgia, Cambria, serif;
+  font-family: georgia, "times new roman", times, serif;
 }
 
 .entry-share{
@@ -142,6 +154,7 @@ time, address {
     left: auto !important;
     top: auto !important;
     padding: 0.5em !important;
+    color: #153D57;
 }
 
 
