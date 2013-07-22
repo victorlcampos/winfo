@@ -4,9 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winfo</title>
+
+    <%= yield :metadata %>
+
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= yield :stylesheet %>
     <%= csrf_meta_tags %>
+
     <link href='//fonts.googleapis.com/css?family=Vollkorn%3A400%2C700|Patua+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
   </head>
