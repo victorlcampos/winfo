@@ -43,8 +43,8 @@ describe 'home/index.html.erb' do
     it 'should render articles description' do
       render
       assert_select 'article' do
-          @articles.each do |article|
-            assert_select 'div.splash-subhead', text: article.summary_body
+        @articles.each do |article|
+          assert_select 'div.splash-subhead', text: article.summary_body
         end
       end
     end

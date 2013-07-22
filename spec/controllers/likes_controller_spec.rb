@@ -7,9 +7,9 @@ describe LikesController do
     context 'with diferent ip' do
       before(:each) do
         request.stub(:remote_ip) { '127.0.0.1' }
-        post :create, article_id: article.id
+        post :create, article_id: article.permalink
         request.stub(:remote_ip) { '127.0.0.2' }
-        post :create, article_id: article.id
+        post :create, article_id: article.permalink
       end
 
       it 'should increase likes_count by two' do
@@ -30,8 +30,8 @@ describe LikesController do
     context 'with same ip' do
       before(:each) do
         request.stub(:remote_ip) { '127.0.0.1' }
-        post :create, article_id: article.id
-        post :create, article_id: article.id
+        post :create, article_id: article.permalink
+        post :create, article_id: article.permalink
       end
 
       it 'should increase likes_count by one' do

@@ -35,7 +35,7 @@ describe "articles/show.html.erb" do
 
     it 'should render like button' do
       render
-      assert_select 'form[action=?]#like_form', article_likes_path(@article.id) do
+      assert_select 'form[action=?]#like_form', article_likes_path(@article) do
         assert_select 'a.submitForm'
       end
     end

@@ -106,8 +106,8 @@ describe ArticlesController do
     let!(:article) { FactoryGirl.build(:article) }
 
     before(:each) do
-      Article.stub(:find).with('1') {article}
-      get :show, id: 1
+      Article.stub(:find_by_permalink).with('hello-world') { article }
+      get :show, id: 'hello-world'
     end
 
     it "returns http success" do
@@ -118,5 +118,4 @@ describe ArticlesController do
       assigns(:article).should == article
     end
   end
-
 end

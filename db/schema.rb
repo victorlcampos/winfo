@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130701124640) do
+ActiveRecord::Schema.define(:version => 20130722150047) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(:version => 20130701124640) do
     t.integer  "views",       :default => 0
     t.integer  "likes_count", :default => 0
     t.integer  "user_id"
+    t.string   "permalink"
   end
 
+  add_index "articles", ["permalink"], :name => "index_articles_on_permalink"
   add_index "articles", ["user_id"], :name => "index_articles_on_user_id"
 
   create_table "likes", :force => true do |t|

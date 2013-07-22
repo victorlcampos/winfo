@@ -9,7 +9,36 @@ describe Article do
   context 'validates' do
     it { should validate_presence_of(:title) }
     it { should validate_presence_of(:body) }
+    it { should validate_uniqueness_of(:permalink) }
   end
+
+  context 'calllbacks' do
+    context 'after create' do
+      describe 'create permalink' do
+
+        let!(:article1) do
+          FactoryGirl.create(:article, title: 'Título do artigo')
+        end
+
+        context 'first permalink' do
+          it 'should save permalink only with title' do
+            article1.permalink.should eq('titulo-artigo')
+          end
+        end
+
+        context 'repeated permalink' do
+          let!(:article2) do
+            FactoryGirl.create(:article, title: 'Título do artigo')
+          end
+
+          it 'should save permalink only with title' do
+            article2.permalink.should eq("titulo-artigo-#{article2.id}")
+          end
+        end
+      end
+    end
+  end
+
   context 'general methods' do
     describe '#summary_body' do
       context 'with body' do
@@ -29,13 +58,18 @@ describe Article do
       end
     end
 
-  describe '#posted_entry' do
+    describe '#posted_entry' do
       context 'correct date' do
         subject { FactoryGirl.create(:article, created_at: Date.new(2013,06,15)) }
         it 'should write 15 Jun 2013' do
           subject.posted_entry.should == subject.created_at.day.to_s + " Jun " + subject.created_at.year.to_s
         end
       end
+    end
+
+    describe '#to_param' do
+      subject { FactoryGirl.create(:article, title: 'Título do artigo') }
+      its(:to_param) { should eq(subject.permalink) }
     end
   end
 
