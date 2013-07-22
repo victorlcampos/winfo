@@ -90,6 +90,8 @@ class String
 
     str = self.strip.removeaccents
     str.downcase! if options[:downcase]
+    str.gsub!(/[^a-z0-9]+/i, ' ')
+    str.strip!
     str.gsub!(/\ /,'-') if options[:convert_spaces]
 
     remove_stop_words(str)

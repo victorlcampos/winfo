@@ -17,7 +17,7 @@ describe Article do
       describe 'create permalink' do
 
         let!(:article1) do
-          FactoryGirl.create(:article, title: 'Título do artigo')
+          FactoryGirl.create(:article, title: 'Título do artigo?')
         end
 
         context 'first permalink' do
@@ -28,7 +28,7 @@ describe Article do
 
         context 'repeated permalink' do
           let!(:article2) do
-            FactoryGirl.create(:article, title: 'Título do artigo')
+            FactoryGirl.create(:article, title: 'Título do artigo?')
           end
 
           it 'should save permalink only with title' do
