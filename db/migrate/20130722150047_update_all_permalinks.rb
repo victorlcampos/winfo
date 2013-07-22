@@ -7,9 +7,5 @@ class UpdateAllPermalinks < ActiveRecord::Migration
   end
 
   def down
-    Article.find_each do |article|
-      article.permalink = nil
-      article.save!
-    end
   end
 end
